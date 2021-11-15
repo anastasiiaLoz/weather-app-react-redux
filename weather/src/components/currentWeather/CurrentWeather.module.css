@@ -1,0 +1,89 @@
+.currentWeatherContainer {
+  width: 300px;
+  height: 245px;
+  background: rgba(16, 33, 54, 0.8);
+  box-shadow: 0px 8px 43px rgba(16, 33, 54, 0.6);
+  border-radius: 34px;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  top: 22%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.iconCityContainer {
+  flex-direction: row;
+  display: flex;
+  justify-content: flex-start;
+  padding-right: 15px;
+}
+
+.weatherIcon:hover {
+  transform: scale(1.2);
+}
+
+.currentInfoContainer {
+  height: 130px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.currentTemp {
+  font-weight: bold;
+  font-size: 25px;
+  line-height: 30px;
+  padding-right: 15px;
+  margin-bottom: 10px;
+  color: #ff6b09;
+}
+
+.currentCity,
+.currentWeatherDescription,
+.weatherCondition {
+  color: white;
+}
+
+.weatherCondition {
+  padding-left: 5px;
+}
+
+.currentWeatherDescription,
+.weatherCondition {
+  opacity: 0.55;
+}
+
+.loadingMessage,
+.errorMessage {
+  color: white;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.loadingMessage {
+  color: white;
+}
+
+.errorMessage {
+  color: red;
+}
+
+.loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.currentCity {
+  display: block;
+  position: absolute;
+  left: 126px;
+  top: 55px;
+}

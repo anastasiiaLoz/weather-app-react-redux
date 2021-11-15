@@ -1,0 +1,29 @@
+.sevenDaysContainer {
+  width: 1060px;
+  height: 250px;
+  background: rgba(16, 33, 54, 0.8);
+  box-shadow: 0px 8px 43px rgba(16, 33, 54, 0.6);
+  border-radius: 34px;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  top: 60%;
+  padding: 15px;
+  display: flex;
+}
+
+@media (max-width: 480px) {
+  .sevenDaysContainer {
+    width: 300px;
+    flex-direction: column;
+    height: auto;
+    align-items: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .sevenDaysContainer {
+    width: calc(100% - 30px);
+    height: auto;
+  }
+}

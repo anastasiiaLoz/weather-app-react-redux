@@ -1,0 +1,66 @@
+.inputContainer {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.input {
+  width: 520px;
+  height: 50px;
+  background: #ffffff;
+  border-radius: 30px;
+  border-color: transparent;
+  margin-top: 35px;
+  padding: 13px 20px 13px 54px;
+}
+
+@media (max-width: 480px) {
+  .input {
+    width: 300px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .input {
+    width: 445px;
+  }
+}
+
+.input:focus {
+  outline: none;
+}
+
+.searchIcon {
+  position: absolute;
+  color: grey;
+  bottom: 14px;
+  left: 18px;
+  cursor: pointer;
+}
+.searchIcon:hover {
+  color: orange;
+}
+
+.favouriteIcon {
+  position: absolute;
+  color: grey;
+  bottom: 14px;
+  left: 481px;
+  cursor: pointer;
+}
+
+@media (max-width: 480px) {
+  .favouriteIcon {
+    left: 260px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .favouriteIcon {
+    left: 400px;
+  }
+}
+
+.favouriteIcon:hover {
+  color: orange;
+}

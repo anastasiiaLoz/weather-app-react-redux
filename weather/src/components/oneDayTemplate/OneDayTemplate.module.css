@@ -1,0 +1,130 @@
+.dayContainer {
+  padding: 5px;
+  width: 120px;
+  height: 210px;
+}
+
+@media (max-width: 480px) {
+  .dayContainer {
+    width: 150px;
+    padding: 5px;
+    height: auto;
+  }
+}
+@media (max-width: 768px) {
+  .dayContainer {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.dayList {
+  display: flex;
+}
+
+@media (max-width: 480px) {
+  .dayList {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .dayList {
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+}
+
+.dayOfWeek {
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+  letter-spacing: 0.04em;
+  color: #ffffff;
+  opacity: 0.55;
+}
+
+.date {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 22px;
+  line-height: 30px;
+  text-align: center;
+  letter-spacing: 0.04em;
+  color: #ffffff;
+}
+
+.minMaxContainer {
+  width: 120px;
+  height: 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.min,
+.max {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 22px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  color: #ffffff;
+  opacity: 0.55;
+  margin-bottom: 10px;
+}
+
+.minTemp,
+.maxTemp {
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 30px;
+  display: block;
+  text-align: center;
+  color: #ff6b09;
+}
+
+.icon {
+  display: flex;
+  margin: 0 auto;
+  width: 90px;
+}
+.icon:hover {
+  transform: scale(1.2);
+}
+
+.days:not(:last-child) {
+  margin-right: 10px;
+}
+
+@media (max-width: 480px) {
+  .days:not(:last-child) {
+    margin-right: 0px;
+    margin-bottom: 20px;
+    border-bottom: rgba(255, 255, 255, 0.507) 2px solid;
+    padding-bottom: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .days:not(:last-child) {
+    margin-right: 0px;
+    margin-bottom: 30px;
+
+    padding-bottom: 30px;
+  }
+}
+
+.loadingMessage,
+.errorMessage {
+  color: white;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
