@@ -1,28 +1,57 @@
-# xgeeks tech assignment
+# Weather App
 
-In this repo you can find the tech challenge we use to evaluate our candidates as part of the interview process.
+This App gives users detailed information about the weather based on his/her current location at the moment as well as 7 day forecast. It provides an option to search weather by a city and add it to favourite list, with a possibility to remove it later.
+There is no need to worry about the list of favourite potential future trips of the cities that had been liked after leaving application as the App stores everything for users' convenience.
+By clicking on each city from favourite list, the App will show detailed information about the specific city, so that the users don't need to search it again.
 
-Here, you can find the designated assignment details to be evaluated:
+## Website
 
-- [ASSIGNMENT](assignment.md)
+## Installation
 
->When delivering the assignments, the closer to production ready it is, the better.
-It's a great plus if you make our job of reviewing the challenge easier by virtualizing/containerizing it so that it runs smoothly on any machine and also give detailed instructions on how to run it.
+npm install
 
-We will discuss the project from a few different points:
+### Usage
 
-**Architecture**. You’re welcome to organize the code in a way that you believe suits best. Here, we’ll discuss possible alternatives and exchange a few ideas
+npm start
 
-**Engineering**. We’ll discuss this point based on the actual code: how it’s organized and written, if it’s easy to get picked up by a new engineer in a team (or in community, if we talk about open source). Of course it’s important that the code is readable, but we’ll go beyond that and talk about coherence of the codebase and its hypothetical (or potential) future.
+## Development
 
-**Tooling**. How does a completely unfamiliar user with basic technical background get the code and run it? What programs are expected to be available on user’s computer before installing the tool? How could that user potentially do a micro-deploy on their own machine?
+Developing this App I have used this stack of technologies:
 
-**Documentation**. Good code is one that documents itself, but sometimes it isn’t enough. We’ll discuss things such as quick start guide, code style and contribution guideline. It’s important that a new team member that joins the team and gets introduced to the codebase, or another team that develops integration, has a really good time exploring the code.
+- React.js
+- Redux
+- Redux - toolkit
+  - createAsyncThunk
+  - createSlice
+- CSS Module
+- Axios
+- Nanoid
+- React-loader-spinner
+- Material UI Icons
 
-In order to do the assignment please **fork** this repo and perform a **PR** when ready in order for us to evaluate the assignment and continue with the interview process.
+I've chosen to use Redux-toolkit to simplify developing process for me with Redux. Using "createSlice" has been even more satisfying as it saves up valuable time by not writing a lot of boilerplate code.
 
-Remember, we are only building a team! There will be a lot of opportunities to learn and go through peer-driven quality review, so we care more about what knowledge and experience you bring to the team. Thank you for taking the time, and we are looking forward to our next interview that will follow up on this little project.
+## Architecture
 
-### In case of issues or doubts
+My intention was to make my App as much easy and understandable as possible.
+The App has responsive design, which makes it enjoyable to use it in all devices.
 
-Please send an email to **career@xgeeks.io** and will get back to you as soon as possible
+I've kept my components and majority of logic separate, dividing it into 4 sections:
+
+- Components
+  - This section contains markups and styles of components
+- Hooks
+  - This section has two custom hooks
+    - "useStateInLocalStorage" hook - helps to persist user's data to local storage and extract it for future use in code
+    - "useUserLocation" hook - helps to get user's current geolocation and stores this data in a state for future use in code
+- Pictures
+  - This section contains a background picture for my App
+- Redux
+  - This section contains redux logic
+    - "Slices" folder contains 2 slices:
+      - "currentGeolocationSlice" - takes current user's coordinates from state and makes a call to "https://openweathermap.org/api/one-call-api" API to get weather for current city as well as for the next 7 days.
+      - "citySlice" - gives back detailed information about current day and next 7 days based on city which user inserts in search bar.
+        This slice does:
+        - adds city to favourite list
+        - removes city from favourite list
+        - updates Redux state from local storage state
